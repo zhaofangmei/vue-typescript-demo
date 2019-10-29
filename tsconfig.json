@@ -1,4 +1,5 @@
 {
+  //编译选项
   "compilerOptions": {
     "target": "esnext",
     "module": "esnext",
@@ -8,7 +9,9 @@
     "moduleResolution": "node",
     "experimentalDecorators": true,
     "esModuleInterop": true,
+    // 允许从没有设置默认导出的模块中默认导入
     "allowSyntheticDefaultImports": true,
+    // 是否包含可以用于 debug 的 sourceMap
     "sourceMap": true,
     "baseUrl": ".",
     "types": [
@@ -28,6 +31,7 @@
       "scripthost"
     ]
   },
+  // ts 管理的文件
   "include": [
     "src/**/*.ts",
     "src/**/*.tsx",
@@ -35,6 +39,7 @@
     "tests/**/*.ts",
     "tests/**/*.tsx"
   ],
+  // ts 排除的文件
   "exclude": [
     "node_modules"
   ]

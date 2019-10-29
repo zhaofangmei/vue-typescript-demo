@@ -1,14 +1,14 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
 
 Vue.use(VueRouter);
 
+//使用路由懒加载
 const routes = [
   {
     path: "/",
     name: "home",
-    component: Home
+    component: () => import("../views/home.vue")
   },
   {
     path: "/about",
