@@ -6,18 +6,24 @@
           <img class="home_logo" src="../assets/userLogo.jpg" alt="amei logo" />
         </router-link>
       </div>
-      <div class="home_header"></div>
+      <div class="home_body">
+        <div class="list">
+          <router-link class="link" to="/articles">文章</router-link>
+          <router-link class="link" to="/project">项目</router-link>
+        </div>
+        <div class="introduce">时光正好，未来可期，加油 ！</div>
+      </div>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-export default {
-  name: "home",
-  components: {}
-};
+import { Vue, Component, Watch } from "vue-property-decorator";
+
+@Component
+export default class Home extends Vue {}
 </script>
-<style lang="less">
+<style lang="less" scoped>
 .home {
   .home_header {
     .link {

@@ -1,12 +1,10 @@
 <template>
   <div id="app" class="container">
-    <el-container>
-      <el-header v-if="isShowNav">nav</el-header>
-      <el-main class="layout">
-        <router-view />
-      </el-main>
-      <el-footer v-if="isShowNav"></el-footer>
-    </el-container>
+    <div v-if="isShowNav">nav</div>
+    <div class="layout">
+      <router-view />
+    </div>
+    <div v-if="isShowNav">typescript+vue ©2019 Created by amei</div>
   </div>
 </template>
 <script lang="ts">
@@ -36,5 +34,11 @@ export default class App extends Vue {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+.container {
+  height: 100%;
+}
+.layout {
+  height: calc(~"100% - 100px");
 }
 </style>
