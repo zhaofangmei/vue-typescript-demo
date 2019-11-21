@@ -28,17 +28,26 @@ export default class App extends Vue {
 }
 </script>
 <style lang="less">
+@import url("./less/index.less");
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  width: 1200px;
+  margin: 0 auto;
 }
 .container {
-  height: 100%;
+  height: calc(100vh - 20px);
+  max-height: 100vh;
+  overflow: hidden;
 }
 .layout {
-  height: calc(~"100% - 100px");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: #ccc;
 }
 </style>

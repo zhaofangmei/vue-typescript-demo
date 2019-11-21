@@ -25,14 +25,27 @@ export default class Home extends Vue {}
 </script>
 <style lang="less" scoped>
 .home {
+  flex: 1;
+  .content {
+    font-size: 20px;
+    text-align: center;
+  }
   .home_header {
     .link {
-      display: block;
+      display: inline-block;
     }
     .home_logo {
       width: 220px;
       border-radius: 50%;
       animation: mylogo 5s infinite;
+    }
+  }
+  .home_body {
+    padding-top: 20px;
+    .list .link {
+      display: inline-block;
+      padding: 20px;
+      color: #409eff;
     }
   }
 }
