@@ -1,6 +1,6 @@
 <template>
   <div id="app" class="container">
-    <div v-if="isShowNav">nav</div>
+    <Nav v-if="isShowNav"></Nav>
     <div class="layout">
       <router-view />
     </div>
@@ -10,8 +10,11 @@
 <script lang="ts">
 import { Vue, Component, Watch } from "vue-property-decorator";
 import { Route } from "vue-router";
+import Nav from "@/components/nav.vue";
 
-@Component
+@Component({
+  components: { Nav }
+})
 export default class App extends Vue {
   private isShowNav: boolean = true;
   mounted(): void {
@@ -29,6 +32,7 @@ export default class App extends Vue {
 </script>
 <style lang="less">
 @import url("./less/index.less");
+@import url("./less/mobile.less");
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -44,10 +48,6 @@ export default class App extends Vue {
   overflow: hidden;
 }
 .layout {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
   background-color: #ccc;
 }
 </style>

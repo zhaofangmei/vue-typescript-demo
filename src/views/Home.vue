@@ -10,6 +10,12 @@
         <div class="list">
           <router-link class="link" to="/articles">文章</router-link>
           <router-link class="link" to="/project">项目</router-link>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            class="link"
+            href="https://github.com/zhaofangmei"
+          >github</a>
         </div>
         <div class="introduce">时光正好，未来可期，加油 ！</div>
       </div>
@@ -25,8 +31,12 @@ export default class Home extends Vue {}
 </script>
 <style lang="less" scoped>
 .home {
-  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   .content {
+    flex: 1;
     font-size: 20px;
     text-align: center;
   }
