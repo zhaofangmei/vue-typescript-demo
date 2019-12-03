@@ -1,3 +1,4 @@
+// webpack 配置
 const path = require("path");
 const sourceMap = process.env.NODE_ENV === "development";
 
@@ -26,7 +27,9 @@ module.exports = {
         extensions: [".js", ".vue", ".json", ".ts", ".tsx"],
         alias: {
           vue$: "vue/dist/vue.js",
-          "@": path.resolve(__dirname, "./src")
+          "@": path.resolve(__dirname, "./src"),
+          "@c": path.resolve(__dirname, "./src/components"),
+          less: path.resolve(__dirname, "./src/less"),
         }
       }
     });
@@ -42,8 +45,7 @@ module.exports = {
     // css预设器配置项
     loaderOptions: {},
     // 启用 CSS modules for all css / pre-processor files.
-    // modules: false //v4弃用
-    requireModuleExtension: false
+    modules: false
   },
   // use thread-loader for babel & TS in production build
   // enabled by default if the machine has more than 1 cores
@@ -62,9 +64,7 @@ module.exports = {
       // 设置代理
       // proxy all requests starting with /api to jsonplaceholder
       "/api": {
-        // target: "https://emm.cmccbigdata.com:8443/",
         target: "http://localhost:3000/",
-        // target: "http://47.106.136.114/",
         changeOrigin: true,
         ws: true,
         pathRewrite: {

@@ -1,3 +1,4 @@
+// 相关 tsx 模块注入
 import Vue, { VNode } from "vue";
 
 declare global {
